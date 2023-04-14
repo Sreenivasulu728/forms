@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1
+        {
+            background-color: red;
+        }
+        center
+        {
+            background-color: aqua;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow" text="blue">
+    <center>
+        <h1>Webpage insertion form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="topic">Topic_name:</label>
+            <select name="topic" id="topic">
+                {% for top in topics %}
+                <option value="{{top}}">{{top.topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="url">URL:</label>
+            <input type="url" name="url" id="url"><br><br>
+            <label for="emial">Emial:</label>
+            <input type="email" name="email" id="emial"><br><br>
+            <input type="submit" value="submit">
+
+        </form>
+    </center>
+</body>
+</html>
